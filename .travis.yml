@@ -3,36 +3,28 @@ sudo: false
 language: node_js
 
 node_js:
-    - '10'
+  - '10'
 
 branches:
-    only:
-        - master
-        - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  only:
+    - master
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
 cache:
-    directories:
-        - node_modules
+  directories:
+    - node_modules
 
-# Set DISPLAY for Xvfb
-env:
-    - DISPLAY=:99.0
+services:
+  - xvfb
 
-# Use APT Addon to install Chrome
 addons:
-    apt:
-        sources:
-            - google-chrome
-        packages:
-            - google-chrome-stable
-
-before_install:
-    - sh -e /etc/init.d/xvfb start
+  chrome: stable
 
 install:
-    - npm install
-    - npm install coveralls
+  - npm set progress=false
+  - npm install
+  - npm install coveralls
 
 script:
-    - npm test
-    - cat ./coverage/observables/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - npm test
+  - cat ./coverage/observables/lcov.info | ./node_modules/coveralls/bin/coveralls.js
