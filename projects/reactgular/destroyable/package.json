@@ -1,10 +1,20 @@
 {
   "name": "@reactgular/destroyable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Destroyable is an abstract class that implements the OnDestroy life-cycle hook in Angular",
   "author": "reactgular.com",
   "homepage": "https://github.com/reactgular/destroyable",
   "license": "MIT",
+  "keywords": [
+    "angular",
+    "angular-library",
+    "life-cycle-hooks",
+    "angular-components",
+    "components",
+    "rxjs",
+    "destroy",
+    "OnDestroy"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/reactgular/destroyable"
