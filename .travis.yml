@@ -27,4 +27,4 @@ install:
 
 script:
   - npm test
-  - cat ./coverage/observables/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/reactgular/destroyable/lcov.info | ./node_modules/coveralls/bin/coveralls.js
