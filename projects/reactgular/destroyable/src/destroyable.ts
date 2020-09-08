@@ -1,11 +1,11 @@
-import {OnDestroy} from '@angular/core';
+import {Directive, OnDestroy} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 
 /**
  * A simple class that emits a destruction event.
- *
- * @todo needs to be a directive in Angular 9.
  */
+@Directive()
+// tslint:disable-next-line:directive-class-suffix
 export abstract class Destroyable implements OnDestroy {
   /**
    * Emits when the object is destroyed by the Angular framework.
