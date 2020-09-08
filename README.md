@@ -7,10 +7,17 @@
 Destroyable is an abstract class which implements the `OnDestroy` life-cycle hook in Angular, and when the hook gets triggered a protected observable 
 named `_destroyed$` will emit once and then complete.
 
+You can then use `takeUntil(this._destroyed$)` when subscribing to observables from inside your component, and the subscription will automatically
+end when the component has been destroyed.
+
 The usage of `takeUntil(this._destroyed$)` is a popular best practice for Angular projects. You can find a lot of tutorials online discussing the practice.
 
 - [The Best Way To Unsubscribe RxJS Observables In The Angular Applications](https://blog.angularindepth.com/the-best-way-to-unsubscribe-rxjs-observable-in-the-angular-applications-d8f9aa42f6a0)
 - [The easiest way to unsubscribe from Observables in Angular](https://medium.com/thecodecampus-knowledge/the-easiest-way-to-unsubscribe-from-observables-in-angular-5abde80a5ae3)
+
+## Changelog
+
+[Learn about the latest improvements][changelog].
 
 ## Installation
 
