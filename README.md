@@ -55,3 +55,18 @@ export class ExampleComponent extends Destroyable implements OnInit {
   }
 }
 ```
+
+When implementing `OnDestroy` it's very important to call `super.ngOnDestroy()` for the base class, but it's not necessary to implement
+the interface because `Destroyable` already implements it.
+
+```
+export class ExampleComponent extends Destroyable implements OnDestroy {
+    public constructor() {
+        super();
+    }
+
+    public ngOnDestroy() {
+        super.ngOnDestroy();
+    }
+}
+```
