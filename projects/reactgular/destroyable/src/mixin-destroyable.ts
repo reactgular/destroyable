@@ -17,7 +17,7 @@ export function mixinDestroyable<TBase extends Constructor<OnDestroy>>(base: TBa
     _destroyed$: Subject<void> = new Subject<void>();
 
     /**
-     * You must call super.ngOnDestroy()
+     * You must call super.ngOnDestroy() on your derived class if you override the method.
      */
     public ngOnDestroy(): void {
       try {

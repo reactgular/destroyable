@@ -70,3 +70,31 @@ export class ExampleComponent extends Destroyable implements OnDestroy {
     }
 }
 ```
+
+## Mixin
+
+Destroyable supports mixins to use a different base class with your Angular components. The only limitation is that TypeScript doesn't
+currently support `abstract` classes for use with mixins. 
+
+```
+import {Component, OnInit} from '@angular/core';
+import {interval} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
+import {mixinDestroyable} from '@reactgular/destroyable';
+
+@Directive()
+class BaseDirective {
+}
+
+@Component({
+    selector: 'example'
+    template: ''
+})
+export class ExampleComponent extends mixinDestroyable(BaseDirective) implements OnInit {
+  public ngOnInit(): void {
+    interval(1000).pipe(
+      takeUntil(this._destroyed$)
+    ).subscribe(value => console.log(value));
+  }
+}
+```

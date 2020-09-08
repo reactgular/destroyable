@@ -4,6 +4,7 @@ This release focuses on Angular compatibility and security patches for npm packa
 
 ## Changes
 * This release targets Angular 10 and above.
+* Adds a mixin function for using destroyable with other base classes.
 
 ## Breaking Changes
 * `destroyed` read-only property has been removed. Use the protected `_destroyed$` property instead.
