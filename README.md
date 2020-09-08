@@ -17,15 +17,19 @@ The usage of `takeUntil(this._destroyed$)` is a popular best practice for Angula
 
 ## Changelog
 
-[Learn about the latest improvements][changelog].
+For details on recent changes, releases and Angular version support, please see the change log.
+
+[Learn about the latest improvements](https://github.com/reactgular/destroyable/blob/develop/CHANGELOG.md).
 
 ## Installation
 
 To get started, install the package from npm.
 
 ```bash
-npm install --save @reactgular/destroyable
+npm install @reactgular/destroyable
 ```
+
+> To install Angular 8 or 9 versions `npm install @reactgular/destroyable@1.0.1`
 
 ### Usage
 
