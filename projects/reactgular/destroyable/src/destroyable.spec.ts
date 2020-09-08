@@ -12,7 +12,7 @@ class DestroyableComponent extends Destroyable {
 
 @Component({template: '<rg-destroyable *ngIf="toggle"></rg-destroyable>'})
 class ExampleComponent {
-  @ViewChild(DestroyableComponent, {static: false})
+  @ViewChild(DestroyableComponent)
   public destroyableComponent: DestroyableComponent;
 
   public toggle: boolean = true;

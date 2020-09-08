@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/reactgular/destroyable/tsconfig.lib.json",
             "project": "projects/reactgular/destroyable/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/reactgular/destroyable/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
