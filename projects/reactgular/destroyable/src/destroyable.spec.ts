@@ -18,6 +18,10 @@ class ExampleComponent {
   public toggle: boolean = true;
 }
 
+/**
+ * @todo add a test for forgetting to call super via destroy (to show it breaks).
+ * @todo add a test for catching destroy via takeUntil to show proper usage.
+ */
 describe('destroyable', () => {
   let component: ExampleComponent;
   let fixture: ComponentFixture<ExampleComponent>;

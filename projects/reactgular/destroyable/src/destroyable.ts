@@ -3,6 +3,8 @@ import {Observable, Subject} from 'rxjs';
 
 /**
  * A simple class that emits a destruction event.
+ *
+ * @todo needs to be a directive in Angular 9.
  */
 export abstract class Destroyable implements OnDestroy {
   /**
@@ -12,6 +14,7 @@ export abstract class Destroyable implements OnDestroy {
 
   /**
    * Emits when the object is destroyed by the Angular framework.
+   * @deprecated will be removed in v2
    */
   public get destroyed(): Observable<void> {
     return this._destroyed$.asObservable();
@@ -19,6 +22,7 @@ export abstract class Destroyable implements OnDestroy {
 
   /**
    * Emits when the object is destroyed by the Angular framework.
+   * @deprecated will be removed in v2
    */
   public get destroyed$(): Observable<void> {
     return this._destroyed$.asObservable();
