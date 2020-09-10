@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {waitForAsync} from '@angular/core/testing';
 import {Destroyable} from './destroyable';
-import {buildFixture, testFixture} from './test-utils';
+import {buildFixture, testFixture} from '../test/test-utils';
 
 @Component({
   selector: 'rg-destroyable',
