@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build && cp README.md dist/reactgular/destroyable",
+    "build": "ng build --prod && cp README.md dist/reactgular/destroyable",
     "beta": "npm run lint && npm run build && cd dist/reactgular/destroyable && npm publish --tag beta",
     "test": "ng test --watch=false --code-coverage=true",
     "lint": "ng lint",
