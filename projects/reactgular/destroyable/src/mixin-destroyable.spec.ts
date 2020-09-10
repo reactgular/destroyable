@@ -1,7 +1,7 @@
 import {Component, Directive, OnDestroy} from '@angular/core';
 import {waitForAsync} from '@angular/core/testing';
 import {mixinDestroyable} from './mixin-destroyable';
-import {buildFixture, testFixture} from '../test/fixture-factory';
+import {buildFixture, testFixture} from './test-utils';
 
 @Directive()
 class SimpleDirective {

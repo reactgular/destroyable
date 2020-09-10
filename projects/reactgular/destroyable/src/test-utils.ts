@@ -12,7 +12,7 @@ export interface FixtureProperties<TType> {
   ref: TType & DestroyableObservable;
 }
 
-export function fixtureFactory<TType>(component: Type<TType>, selector: string): Type<any> {
+export const fixtureFactory = <TType>(component: Type<TType>, selector: string): Type<any> => {
   // noinspection AngularMissingOrInvalidDeclarationInModule
   @Component({
     template: `
@@ -27,9 +27,9 @@ export function fixtureFactory<TType>(component: Type<TType>, selector: string):
   }
 
   return FixtureComponent;
-}
+};
 
-export function testFixture<TType>(fixtureComponent: Type<FixtureProperties<TType>>): [TType, number, boolean] {
+export const testFixture = <TType>(fixtureComponent: Type<FixtureProperties<TType>>): [TType, number, boolean] => {
   const fixture = TestBed.createComponent(fixtureComponent);
   fixture.detectChanges();
 
@@ -47,9 +47,9 @@ export function testFixture<TType>(fixtureComponent: Type<FixtureProperties<TTyp
   }
 
   return [ref, count, closed];
-}
+};
 
-export async function buildFixture<TType>(component: Type<TType>): Promise<Type<FixtureProperties<TType>>> {
+export const buildFixture = async <TType>(component: Type<TType>): Promise<Type<FixtureProperties<TType>>> => {
   const fixtureComponent: Type<FixtureProperties<TType>> = fixtureFactory(component, 'destroyable');
 
   await TestBed.configureTestingModule({
@@ -60,4 +60,4 @@ export async function buildFixture<TType>(component: Type<TType>): Promise<Type<
   }).compileComponents();
 
   return fixtureComponent;
-}
+};

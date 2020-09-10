@@ -24,7 +24,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/reactgular/destroyable/test/test.ts",
+            "main": "projects/reactgular/destroyable/src/test.ts",
             "tsConfig": "projects/reactgular/destroyable/tsconfig.spec.json",
             "karmaConfig": "projects/reactgular/destroyable/karma.conf.js"
           }
