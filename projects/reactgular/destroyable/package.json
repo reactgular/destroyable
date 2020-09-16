@@ -1,6 +1,6 @@
 {
   "name": "@reactgular/destroyable",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Destroyable is an abstract class that implements the OnDestroy life-cycle hook in Angular",
   "author": "reactgular.com",
   "homepage": "https://github.com/reactgular/destroyable",
@@ -22,8 +22,11 @@
   "bugs": {
     "url": "https://github.com/reactgular/destroyable/issues"
   },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/common": "^10.0.0",
+    "@angular/core": "^10.0.0"
   }
 }

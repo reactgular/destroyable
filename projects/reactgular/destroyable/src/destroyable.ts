@@ -1,9 +1,11 @@
-import {OnDestroy} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import {Directive, OnDestroy} from '@angular/core';
+import {Subject} from 'rxjs';
 
 /**
  * A simple class that emits a destruction event.
  */
+@Directive()
+// tslint:disable-next-line:directive-class-suffix
 export abstract class Destroyable implements OnDestroy {
   /**
    * Emits when the object is destroyed by the Angular framework.
@@ -11,21 +13,7 @@ export abstract class Destroyable implements OnDestroy {
   protected readonly _destroyed$: Subject<void> = new Subject<void>();
 
   /**
-   * Emits when the object is destroyed by the Angular framework.
-   */
-  public get destroyed(): Observable<void> {
-    return this._destroyed$.asObservable();
-  }
-
-  /**
-   * Emits when the object is destroyed by the Angular framework.
-   */
-  public get destroyed$(): Observable<void> {
-    return this._destroyed$.asObservable();
-  }
-
-  /**
-   * You must call super.ngOnDestroy()
+   * You must call super.ngOnDestroy() on your derived class if you override the method.
    */
   public ngOnDestroy(): void {
     this._destroyed$.next();
